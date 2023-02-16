@@ -1,0 +1,100 @@
+# Parti 1 : Simulation d’une luciole
+# E3IN
+# 2022-2023
+#BEN BRAHIM Elyesse
+
+
+
+SEUIL = 1.0
+
+import random as random
+
+# --- Question 1
+def main():
+    lucioleEnergie = random.uniform(0, 100)
+    print("Energie de la luciole : ", lucioleEnergie)   
+#print(main())
+
+
+# --- Question 2
+
+def symboliseLuciole(niveauEnergie):
+    if niveauEnergie >= SEUIL:
+        return "*"
+    else:
+        return "."
+#print(symboliseLuciole(1.0))
+
+
+# --- Question 3
+
+def afficheLuciole(niveauEnergie, verbeux):
+    print(symboliseLuciole(niveauEnergie), end = "")
+    if verbeux == True:
+        print(" ", niveauEnergie)
+    print()
+
+
+
+# --- Question 4
+
+
+
+# --- Question 5
+
+def main():
+    lucioleEnergie = random.uniform(0, 100)
+    print("Energie de la luciole : ", lucioleEnergie)
+    lucioleDeltaEnergie = random.uniform(0, 1)
+    print("Delta Energie de la luciole : ", lucioleDeltaEnergie)
+#print(main())
+
+
+# Question 6
+def incrementeLuciole(niveauEnergie, deltaEnergie):
+    return niveauEnergie + deltaEnergie
+#print(incrementeLuciole(1.0, 1.0))
+
+
+# --- Question 7
+
+
+def main():
+    lucioleEnergie = random.uniform(0, 100)
+    print("Energie de la luciole : ", lucioleEnergie)
+    lucioleDeltaEnergie = random.uniform(0, 1)
+    print("Delta Energie de la luciole : ", lucioleDeltaEnergie)
+    for i in range(5):
+        lucioleEnergie = incrementeLuciole(lucioleEnergie, lucioleDeltaEnergie)
+        print("Energie de la luciole : ", lucioleEnergie)
+
+
+
+# --- Question 8
+
+def simuleLucioleNbPas(nbPas):
+    lucioleEnergie = random.uniform(0, 100)
+    print("Energie de la luciole : ", lucioleEnergie)
+    lucioleDeltaEnergie = random.uniform(0, 1)
+    print("Delta Energie de la luciole : ", lucioleDeltaEnergie)
+    for i in range(nbPas):
+        lucioleEnergie = incrementeLuciole(lucioleEnergie, lucioleDeltaEnergie)
+        afficheLuciole(lucioleEnergie, True)
+
+
+
+#  Question 9
+def simuleLucioleNbFlashs(nbFlashs):
+    lucioleEnergie = random.uniform(0, 100)
+    print("Energie de la luciole : ", lucioleEnergie)
+    lucioleDeltaEnergie = random.uniform(0, 1)
+    print("Delta Energie de la luciole : ", lucioleDeltaEnergie)
+    for i in range(nbFlashs): # on tourne jusqu'à ce que le nombre de flashs soit atteint
+        lucioleEnergie = incrementeLuciole(lucioleEnergie, lucioleDeltaEnergie)
+        afficheLuciole(lucioleEnergie, True)
+        if lucioleEnergie >= SEUIL:
+            print("Flash !")
+#print(simuleLucioleNbFlashs(3))
+
+
+
